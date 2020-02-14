@@ -1,3 +1,44 @@
-<p>
-  detailed-view works!
-</p>
+<div class="container-fluid">
+  <div class="col-8 p-5 mx-auto">
+    <div class="card mx-auto">
+      <div class="card-img-top img-fluid"></div>
+      <div class="card-body" *ngIf="currentUser">
+        <h4 class="card-title text-center">
+          {{ currentUser?.first_name + " " + currentUser?.last_name }}
+        </h4>
+
+        <p class="mt-5">
+          Age: <a>{{ currentUser?.age }}</a>
+        </p>
+        <p>
+          Company:
+          <a>
+            {{ currentUser?.company_name }}
+          </a>
+        </p>
+        <p>
+          Website:
+          <a>
+            {{ currentUser?.web }}
+          </a>
+        </p>
+        <p>
+          Email:
+          <a>
+            {{ currentUser?.email }}
+          </a>
+        </p>
+        <p>
+          Address:
+          <a
+            >{{ currentUser?.city }}, {{ currentUser?.state }},
+            {{ currentUser?.zip }}.</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="back" (click)="goBack()">
+    <i class="fa fa-arrow-left " aria-hidden="true"></i>
+  </span>
+</div>

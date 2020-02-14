@@ -1,0 +1,25 @@
+.card {
+  font-family: "Montserrat";
+  width: 25em;
+
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  .card-body {
+    padding: 2em;
+    p {
+      font-family: "Montserrat";
+      a {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.back {
+  font-size: 2em;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  cursor: pointer;
+}
