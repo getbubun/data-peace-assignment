@@ -13,7 +13,7 @@ getData(){
   return this.http.get('https://datapeace-storage.s3-us-west-2.amazonaws.com/dummy_data/users.json')
 }
 
-
+ 
 
 public set setuser(user : any) {
   this.currentUser = user;
