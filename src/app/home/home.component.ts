@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
   pager: any = {};
   pagedItems: any = [];
   newList: any = [];
+  desc: boolean  ;
+  
 
   constructor(
     private apiService: ApiService,
@@ -51,13 +53,61 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  sort() {
-    // this.userList = this.newList.sort(this.sortByFirstName);
-    this.newList = this.userList.sort((a, b) => {
-      return b.first_name - a.first_name;
-    });
-    console.log(this.newList);
+  sort(item) {
+    this.desc = !this.desc;
+    switch(item){
+      case "first_name":
+        this.pagedItems.sort((a, b) => {
+          return this.desc ? ((a.first_name > b.first_name) ? -1 : 1) : ((a.first_name > b.first_name) ? 1 : -1)
+        })
+        break;
+      case "last_name":
+        this.pagedItems.sort((a, b) => {
+          return this.desc ? ((a.last_name > b.last_name) ? -1 : 1) : ((a.last_name > b.last_name) ? 1 : -1)
+        })
+        break;
+      case "company_name":
+        this.pagedItems.sort((a, b) =>{
+          return this.desc ? ((a.company_name > b.company_name) ? -1 : 1) : ((a.company_name > b.company_name) ? 1 : -1)
+        })
+        break;
+      case "city":
+        this.pagedItems.sort((a, b) => {
+          return this.desc ? ((a.city > b.city) ? -1 : 1) : ((a.city > b.city) ? 1 : -1)
+        })
+          
+        break;    
+      case "state":
+        this.pagedItems.sort((a, b) => {
+          return this.desc ? ((a.state > b.state) ? -1 : 1) : ((a.state > b.state) ? 1 : -1)
+        })
+        break;
+      case "zip":
+        this.pagedItems.sort((a, b) => {
+          return this.desc ? ((a.zip > b.zip) ? -1 : 1) : ((a.zip > b.zip) ? 1 : -1)
+        })
+        break;
+      case "email":
+        this.pagedItems.sort((a, b) => {
+          return this.desc ? ((a.email > b.email) ? -1 : 1) : ((a.email > b.email) ? 1 : -1)
+        })
+        break; 
+      case "age":
+        this.pagedItems.sort((a, b) => {
+          return this.desc ? ((a.age > b.age) ? -1 : 1) : ((a.age > b.age) ? 1 : -1)
+        })
+        break;
+      case "web":
+        this.pagedItems.sort((a, b) => {
+          return this.desc ? ((a.web > b.web) ? -1 : 1) : ((a.web > b.web) ? 1 : -1)
+        })
+        break;
+
+    }
+
+
+   
   }
 
-  sortByFirstName() {}
+
 }

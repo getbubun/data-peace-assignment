@@ -8,23 +8,42 @@
     />
   </div>
 
-  <table class="table table-hover table-fluid">
+  <table class="table table-hover ">
     <thead>
-      <tr>
-        <th scope="col" (click)="sort()">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Age</th>
-        <th scope="col">Company Name</th>
-        <th scope="col">City</th>
-        <th scope="col">State</th>
-        <th scope="col">Zip</th>
-        <th scope="col">Email</th>
-        <th scope="col">Web</th>
+      <tr style="cursor: pointer;">
+        <th  scope="col" (click)="sort('first_name')">First Name 
+          
+            <img src="https://img.icons8.com/windows/32/000000/data-in-both-directions.png">
+         </th>
+        <th scope="col" (click)="sort('last_name')">Last Name
+           <img src="https://img.icons8.com/windows/32/000000/data-in-both-directions.png">
+        </th>
+        <th scope="col" (click)="sort('age')">Age
+         <img src="https://img.icons8.com/windows/32/000000/data-in-both-directions.png">
+        </th>
+        <th scope="col" (click)="sort('company_name')">Company Name
+         <img src="https://img.icons8.com/windows/32/000000/data-in-both-directions.png">
+        </th>
+        <th scope="col" (click)="sort('city')">City
+         <img src="https://img.icons8.com/windows/32/000000/data-in-both-directions.png">
+        </th>
+        <th scope="col" (click)="sort('state')">State
+           <img src="https://img.icons8.com/windows/32/000000/data-in-both-directions.png">
+        </th>
+        <th scope="col" (click)="sort('zip')">Zip
+           <img src="https://img.icons8.com/windows/32/000000/data-in-both-directions.png">
+        </th>
+        <th scope="col" (click)="sort('email')">Email
+           <img src="https://img.icons8.com/windows/32/000000/data-in-both-directions.png">
+        </th>
+        <th scope="col" (click)="sort('web')">Web
+          <img src="https://img.icons8.com/windows/32/000000/data-in-both-directions.png">
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr
-        *ngFor="let user of userList | filter: myFilter"
+        *ngFor="let user of pagedItems | filter: myFilter"
         (click)="viewUser(user)"
         style="cursor:pointer"
       >
