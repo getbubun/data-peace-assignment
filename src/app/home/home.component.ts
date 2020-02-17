@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
 
   viewUser(user) {
     this.apiService.setuser = user;
+    localStorage.setItem('user', JSON.stringify(user))
     this.router.navigate(["/user/" + user.id]);
   }
 

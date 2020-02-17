@@ -13,7 +13,9 @@ export class DetailedViewComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.apiService.getUser;
-    console.log(this.apiService.getUser);
+    if(localStorage.getItem('user')){
+      this.currentUser = JSON.parse(localStorage.getItem('user'));
+    }
   }
 
   goBack() {
